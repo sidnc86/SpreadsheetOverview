@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #wrapper {
+        position: relative;
+        border: 1px solid #9C9898;
+        width: 700px;
+        height: 650px;
+        margin-left: 200px;
+        margin-top: 200px;
+      }
+
+      #SpreadsheetWrapper {
+        position: relative;
+        border: 2px solid;
+        width: 621px;
+        height: 474px;
+      }
+
+      #buttonWrapper {
+        position: absolute;
+        width: 30px;
+        top: 2px;
+        right: 2px;
+      }
+
+      input[type =
+    "button"] {
+        padding: 5px;
+        width: 30px;
+        margin: 0px 0px 2px 0px;
+      }
+    </style>
+    <script type="text/javascript" src="../js/GridSheetViewer.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function(){
+        var sv = new SpreadsheetViewer({
+          canvasId: "SpreadsheetOverview",
+          columns: 20,
+          rows: 80,
+          //additional customization
+          enableHorizontalGridLines: true,
+          gridLineColor: "#FFFFFF",
+          backgroundColor: "#FFFF00",
+          plotColor: "#000FFF"
+        });
+        sv.plotCell(4, 10);
+        sv.plotCell(16, 40);
+        sv.plotCell(13, 33);
+        sv.plotCell(7, 45);
+      });
+        </script>
+    </head>
+    <body onmousedown="return false;">
+        <div id="wrapper">
+          <div id="SpreadsheetWrapper">
+            <div id="Ribban"><img src="../images/ribban.png" /></div>
+            <canvas id="SpreadsheetOverview" width="621" height="400">
+            </canvas>
+          </div>
+          <div id="buttonWrapper">
+                <input type="button" id="plus" value="+"><input type="button" id="minus" value="-">
+          </div>
+        </div>
+    </body>
+</html>
